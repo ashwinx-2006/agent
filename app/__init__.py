@@ -3,7 +3,7 @@ from app.youtube import youtube_bp
 
 Gemini_api_key = "Gemini_API_Key";
 
-def home():\
+def home():
   return render_template (" index.html ")
   
 def create_app():
