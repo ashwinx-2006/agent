@@ -2,10 +2,12 @@ from flask import Blueprint, request, jsonify
 
 from app.youtube.player import create_youtube_url
 
+
 youtube_bp = Blueprint(
     "youtube",
     __name__
 )
+
 
 @youtube_bp.route(
     "/play",
