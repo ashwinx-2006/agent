@@ -28,4 +28,35 @@ Rules:
 Output exactly:
 
 SUBJECT: <subject>
+BODY:
+<email body>
+
+user command;
+{command}
+"""
+
+url = (
+    f"https://generativelanguage.googleleapis.com/"
+    f"v1beta/models/{MODEL}:generateContent"
+)
+
+payload ={
+    "contents": [{"parts": [{"text": prompt}]}],
+    "generationConfig": {
+    "temprature" : 0.7,
+    "maxOuputTokens":800
+       }
+    }
+
+req = urllib.request.Request(
+    url,
+    data=json.dumps(payload).encode(),
+    headers={
+        "Content-Type": "application/json",
+        "x-goog-api-key" : API_KEY
+    },
+    method="POST"
+)
+
+
 
